@@ -24,9 +24,11 @@ function App() {
   return (
     <div>
       <MuiThemeProvider theme={theme}>
-        <MenuBar />
+        <div>
+          <MenuBar />
+          <KegList />
+        </div>
       </MuiThemeProvider>
-      <KegList />
     </div>
   );
 }
