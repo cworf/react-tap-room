@@ -35,9 +35,11 @@ function MenuBar(props) {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
+          <Link to='/'>
+            <Typography variant="title" color="inherit" className={classes.flex}>
               TAP ROOM
-          </Typography>
+            </Typography>
+          </Link>
           <Link to="/add"><Button color="inherit">Add Keg</Button></Link>
         </Toolbar>
       </AppBar>

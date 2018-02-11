@@ -4,6 +4,7 @@ import KegList from './pages/KegList';
 import AddKeg from './pages/AddKeg';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { Switch, Route } from 'react-router-dom';
+import Reboot from 'material-ui/Reboot';
 
 
 const theme = createMuiTheme({
@@ -26,6 +27,12 @@ const theme = createMuiTheme({
 function App() {
   return (
     <div>
+      <style jsx global>{`
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      `}</style>
 
       <MuiThemeProvider theme={theme}>
         <div>
