@@ -1,5 +1,9 @@
 import React from 'react';
 import Keg from '../ui/Keg';
+import Grid from 'material-ui/Grid';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
 
 const masterList = [
   {name: 'Delicious IPA', brand: 'ninkasi', price: 6, apv: 10, pints: 12},
@@ -9,19 +13,37 @@ const masterList = [
   {name: 'Fake Pale Ale', brand: 'pyramid', price: 4, apv: 5, pints: 12}
 ];
 
-function KegList() {
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    marginTop: 30,
+  }
+});
+
+function KegList(props) {
+  const { classes } = props;
   return (
-    <div>
-      {masterList.map( (keg, index) =>
-        <Keg key={index}
-          name={keg.name}
-          brand={keg.brand}
-          price={keg.price}
-          apv={keg.apv}
-          pints={keg.pints}/>
-      )}
+    <div className={classes.root}>
+      <Typography variant="display1" gutterBottom>
+        Check out our Beer!
+      </Typography>
+      <Grid container spacing={24}>
+        {masterList.map( (keg, index) =>
+          <Grid item xs={3} key={index}>
+            <Keg name={keg.name}
+              brand={keg.brand}
+              price={keg.price}
+              apv={keg.apv}
+              pints={keg.pints}/>
+          </Grid>
+        )}
+      </Grid>
     </div>
   );
 }
 
-export default KegList;
+KegList.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(KegList);

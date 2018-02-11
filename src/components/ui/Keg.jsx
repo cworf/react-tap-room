@@ -5,6 +5,7 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Badge from 'material-ui/Badge';
+import Grid from 'material-ui/Grid';
 
 const styles = theme => ({
   card: {
@@ -48,7 +49,7 @@ function Keg(props) {
         </CardContent>
         <CardActions>
           <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
-            <Button size="small" variant="raised" color="primary"jj>Sell Pint</Button>
+            <Button size="small" variant="raised" color="primary">Sell Pint</Button>
           </Badge>
         </CardActions>
       </Card>
@@ -60,9 +61,9 @@ Keg.propTypes = {
   classes: PropTypes.object.isRequired,
   name: PropTypes.string,
   brand: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   apv: PropTypes.number,
-  pints: PropTypes.string
+  pints: PropTypes.number
 };
 
 export default withStyles(styles)(Keg);
