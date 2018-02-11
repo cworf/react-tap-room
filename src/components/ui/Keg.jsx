@@ -30,6 +30,11 @@ const styles = theme => ({
   },
 });
 
+const flexBtns = {
+  display: 'flex',
+  justifyContent: 'space-between'
+};
+
 function Keg(props) {
   console.log(props);
   const { classes } = props;
@@ -47,10 +52,13 @@ function Keg(props) {
             a delicious beer brewed by {props.brand}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions style={flexBtns}>
           <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
             <Button size="small" variant="raised" color="primary">Sell Pint</Button>
           </Badge>
+          <Typography variant="body1" align="right">
+            <Button>Delete Keg</Button>
+          </Typography>
         </CardActions>
       </Card>
     </div>
