@@ -33,7 +33,7 @@ function App() {
           text-decoration: none;
         }
       `}</style>
-
+      <Reboot />
       <MuiThemeProvider theme={theme}>
         <div>
           <MenuBar />
