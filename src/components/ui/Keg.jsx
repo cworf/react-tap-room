@@ -35,6 +35,14 @@ const flexBtns = {
   justifyContent: 'space-between'
 };
 
+const price = {
+  background: '#543a07',
+  color: '#fff',
+  padding: '5px 14px',
+  display: 'inline-block',
+  float: 'right'
+};
+
 function Keg(props) {
   console.log(props);
   const { classes } = props;
@@ -43,7 +51,7 @@ function Keg(props) {
     <div>
       <Card className={classes.card}>
         <CardContent>
-          <Typography className={classes.title}>${props.price}</Typography>
+          <Typography style={price} className={classes.title}>${props.price}</Typography>
           <Typography variant="headline" component="h2">
             {props.name}
           </Typography>
