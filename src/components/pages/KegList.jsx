@@ -24,7 +24,9 @@ function KegList(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-
+      <Typography style={{marginTop:'30px'}} variant="display1" align="center" gutterBottom>
+        Check out these beers!
+      </Typography>
       <Grid container spacing={24}>
         {masterList.map( (keg, index) =>
           <Grid item xs={3} key={index}>

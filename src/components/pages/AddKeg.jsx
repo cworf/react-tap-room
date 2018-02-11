@@ -8,8 +8,8 @@ function AddKeg() {
 
   return (
     <div >
-      <Typography style={{marginTop:'30px'}} variant="display1" gutterBottom>
-        Check out our Beer!
+      <Typography style={{marginTop:'30px'}} variant="display1" align="center" gutterBottom>
+        Add a beer
       </Typography>
       <form style={{width: '30%', margin: '50px auto'}}>
         <Paper style={{textAlign:'center', padding:'30px'}}>
