@@ -6,6 +6,8 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import Button from 'material-ui/Button';
+import Icon from 'material-ui/Icon';
 
 
 const styles = {
@@ -35,6 +37,7 @@ function MenuBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
               TAP ROOM
           </Typography>
+          <Button color="inherit">Add Keg</Button>
         </Toolbar>
       </AppBar>
     </div>
