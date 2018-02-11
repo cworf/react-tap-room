@@ -8,6 +8,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Button from 'material-ui/Button';
 import Icon from 'material-ui/Icon';
+import {Link} from 'react-router-dom';
 
 
 const styles = {
@@ -37,7 +38,7 @@ function MenuBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
               TAP ROOM
           </Typography>
-          <Button color="inherit">Add Keg</Button>
+          <Link to="/add"><Button color="inherit">Add Keg</Button></Link>
         </Toolbar>
       </AppBar>
     </div>

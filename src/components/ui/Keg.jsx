@@ -55,7 +55,7 @@ function Keg(props) {
           <Typography variant="headline" component="h2">
             {props.name}
           </Typography>
-          <Typography className={classes.pos}>ABV: {props.apv}%</Typography>
+          <Typography className={classes.pos}>ABV: {props.abv}%</Typography>
           <Typography component="p">
             a delicious beer brewed by {props.brand}
           </Typography>
@@ -78,7 +78,7 @@ Keg.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.number,
-  apv: PropTypes.number,
+  abv: PropTypes.number,
   pints: PropTypes.number
 };
 

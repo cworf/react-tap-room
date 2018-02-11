@@ -1,7 +1,10 @@
 import React from 'react';
 import MenuBar from './ui/MenuBar';
 import KegList from './pages/KegList';
+import AddKeg from './pages/AddKeg';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { Switch, Route } from 'react-router-dom';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -23,10 +26,14 @@ const theme = createMuiTheme({
 function App() {
   return (
     <div>
+
       <MuiThemeProvider theme={theme}>
         <div>
           <MenuBar />
-          <KegList />
+          <Switch>
+            <Route exact path="/" component={KegList} />
+            <Route path="/add" component={AddKeg} />
+          </Switch>
         </div>
       </MuiThemeProvider>
     </div>
