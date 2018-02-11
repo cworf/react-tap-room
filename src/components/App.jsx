@@ -1,6 +1,5 @@
 import React from 'react';
 import MenuBar from './ui/MenuBar';
-import Menu from './ui/Menu';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 const theme = createMuiTheme({
@@ -24,7 +23,7 @@ function App() {
   return (
     <div>
       <MuiThemeProvider theme={theme}>
-        <Menu />
+        <MenuBar />
       </MuiThemeProvider>
     </div>
   );

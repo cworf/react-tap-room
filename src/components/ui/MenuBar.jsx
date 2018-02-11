@@ -23,6 +23,7 @@ const styles = {
 
 
 function MenuBar(props) {
+  console.log(props);
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -32,7 +33,7 @@ function MenuBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-              Title
+              TAP ROOM
           </Typography>
         </Toolbar>
       </AppBar>
