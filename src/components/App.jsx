@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuBar from './ui/MenuBar';
+import KegList from './pages/KegList';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 const theme = createMuiTheme({
@@ -25,6 +26,7 @@ function App() {
       <MuiThemeProvider theme={theme}>
         <MenuBar />
       </MuiThemeProvider>
+      <KegList />
     </div>
   );
 }
