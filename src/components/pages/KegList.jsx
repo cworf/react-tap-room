@@ -23,7 +23,7 @@ const styles = theme => ({
 function KegList(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div style={{maxWidth:'1300px', margin:'auto'}} className={classes.root}>
       <Typography style={{marginTop:'30px'}} variant="display1" align="center" gutterBottom>
         Check out these beers!
       </Typography>
