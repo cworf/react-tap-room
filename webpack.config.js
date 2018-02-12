@@ -49,20 +49,20 @@ module.exports = {
           ]
         }
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/i,   //to support eg. background-image property
-        loader:"file-loader",
-        query:{
-          name:'[name].[ext]',
-          outputPath:'images/'
-          //the images will be emmited to public/assets/images/ folder
-          //the images will be put in the DOM <style> tag as eg. background: url(assets/images/image.png);
-        }
-      },
+      // {
+      //   test: /\.css$/,
+      //   loader: 'style-loader!css-loader'
+      // },
+      // {
+      //   test: /\.(jpe?g|png|gif)$/i,   //to support eg. background-image property
+      //   loader:"file-loader",
+      //   query:{
+      //     name:'[name].[ext]',
+      //     outputPath:'images/'
+      //     //the images will be emmited to public/assets/images/ folder
+      //     //the images will be put in the DOM <style> tag as eg. background: url(assets/images/image.png);
+      //   }
+      // },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,    //to support @font-face rule
         loader: "url-loader",
