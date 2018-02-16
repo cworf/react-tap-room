@@ -3,6 +3,7 @@
       "browser": true,
       "es6": true
   },
+  "extends": "eslint:recommended",
   "parserOptions": {
       "ecmaFeatures": {
           "experimentalObjectRestSpread": true,
@@ -14,6 +15,7 @@
       "react"
   ],
   "rules": {
+    "no-console":"off",
     "react/jsx-key": 2,
     "react/jsx-uses-vars": 2,
     "react/jsx-uses-react": 2,
