@@ -40,7 +40,7 @@ function MenuBar(props) {
               TAP ROOM
             </Link>
           </Typography>
-          <Link to="/add"><Button color="inherit">Add Keg</Button></Link>
+          <Link to="/admin"><Button color="inherit">Admin</Button></Link>
         </Toolbar>
       </AppBar>
     </div>

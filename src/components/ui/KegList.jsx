@@ -25,7 +25,8 @@ function KegList(props) {
               brand={keg.brand}
               price={keg.price}
               abv={keg.abv}
-              pints={keg.pints}/>
+              pints={keg.pints}
+              currentRoute={props.currentRoute}/>
           </Grid>
         )}
       </Grid>
@@ -35,7 +36,8 @@ function KegList(props) {
 
 KegList.propTypes = {
   classes: PropTypes.object.isRequired,
-  masterList: PropTypes.array.isRequired
+  masterList: PropTypes.array.isRequired,
+  currentRoute: PropTypes.string
 };
 
 export default withStyles(styles)(KegList);

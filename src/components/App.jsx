@@ -53,8 +53,13 @@ class App extends React.Component {
           <div>
             <MenuBar />
             <Switch>
-              <Route exact path="/" render={() => <Home masterList={this.state.masterList} />} />
-              <Route path="/admin" component={Admin} />
+              <Route exact path="/" render={() =>
+                <Home masterList={this.state.masterList} />}
+              />
+              <Route path="/admin" render={(props) =>
+                <Admin masterList={this.state.masterList}
+                  currentRoute={props.location.pathname}/>} 
+              />
             </Switch>
           </div>
         </MuiThemeProvider>

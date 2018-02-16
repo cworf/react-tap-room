@@ -46,31 +46,57 @@ const price = {
 function Keg(props) {
   console.log(props);
   const { classes } = props;
-
-  return (
-    <div>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography style={price} className={classes.title}>${props.price}</Typography>
-          <Typography variant="headline" component="h2">
-            {props.name}
-          </Typography>
-          <Typography className={classes.pos}>ABV: {props.abv}%</Typography>
-          <Typography component="p">
-            a delicious beer brewed by {props.brand}
-          </Typography>
-        </CardContent>
-        <CardActions style={flexBtns}>
-          <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
-            <Button size="small" variant="raised" color="primary">Sell Pint</Button>
-          </Badge>
-          <Typography variant="body1" align="right">
-            <Button>Delete Keg</Button>
-          </Typography>
-        </CardActions>
-      </Card>
-    </div>
-  );
+  if (props.currentRoute === '/admin') {
+    return (
+      <div>
+        <Card className={classes.card}>
+          <CardContent>
+            <Typography style={price} className={classes.title}>${props.price}</Typography>
+            <Typography variant="headline" component="h2">
+              {props.name}
+            </Typography>
+            <Typography className={classes.pos}>ABV: {props.abv}%</Typography>
+            <Typography component="p">
+              a delicious beer brewed by {props.brand}
+            </Typography>
+          </CardContent>
+          <CardActions style={flexBtns}>
+            <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
+              <Button size="small" variant="raised" color="primary">Refill</Button>
+            </Badge>
+            <Typography variant="body1" align="right">
+              <Button>Edit</Button>
+            </Typography>
+            <Typography variant="body1" align="right">
+              <Button>Delete</Button>
+            </Typography>
+          </CardActions>
+        </Card>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Card className={classes.card}>
+          <CardContent>
+            <Typography style={price} className={classes.title}>${props.price}</Typography>
+            <Typography variant="headline" component="h2">
+              {props.name}
+            </Typography>
+            <Typography className={classes.pos}>ABV: {props.abv}%</Typography>
+            <Typography component="p">
+              a delicious beer brewed by {props.brand}
+            </Typography>
+          </CardContent>
+          <CardActions style={flexBtns}>
+            <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
+              <Button size="small" variant="raised" color="primary">Sell Pint</Button>
+            </Badge>
+          </CardActions>
+        </Card>
+      </div>
+    );
+  }
 }
 
 Keg.propTypes = {
@@ -79,7 +105,8 @@ Keg.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
-  pints: PropTypes.number
+  pints: PropTypes.number,
+  currentRoute: PropTypes.string
 };
 
 export default withStyles(styles)(Keg);
