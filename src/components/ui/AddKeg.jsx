@@ -41,7 +41,10 @@ class AddKeg extends React.Component {
   }
 
   handleNewKegSubmit(){
-    this.props.onKegAdd({name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, pints: this._pints.value});
+    const priceNum = parseInt(this._price.value);
+    const abvNum = parseInt(this._abv.value);
+    const pintsNum = parseInt(this._pints.value);
+    this.props.onKegAdd({ name: this._name.value, brand: this._brand.value, price: priceNum, abv: abvNum, pints: pintsNum });
   }
 
   render() {
