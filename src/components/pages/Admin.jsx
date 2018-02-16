@@ -17,6 +17,7 @@ function Admin(props) {
       <KegList
         currentRoute={props.currentRoute}
         masterList={props.masterList}
+        onKegDelete={props.onKegDelete}
       />
     </div>
   );
@@ -24,8 +25,9 @@ function Admin(props) {
 
 Admin.propTypes = {
   currentRoute:PropTypes.string,
-  masterList: PropTypes.array.isRequired,
-  onKegAdd: PropTypes.func
+  masterList: PropTypes.object.isRequired,
+  onKegAdd: PropTypes.func,
+  onKegDelete: PropTypes.func,
 };
 
 export default Admin;

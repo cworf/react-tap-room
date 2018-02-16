@@ -16,7 +16,7 @@ function Home(props) {
 }
 
 Home.propTypes = {
-  masterList: PropTypes.array.isRequired
+  masterList: PropTypes.object.isRequired
 };
 
 export default Home;

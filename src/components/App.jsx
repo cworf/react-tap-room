@@ -6,7 +6,6 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { Switch, Route } from 'react-router-dom';
 import Reboot from 'material-ui/Reboot';
 
-
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -29,21 +28,57 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      masterList : [
-        {name: 'Delicious IPA', brand: 'ninkasi', price: 6, abv: 10, pints: 12},
-        {name: 'Amazing Lager', brand: 'rolling rock', price: 3, abv: 8, pints: 12},
-        {name: 'Scrumptous Porter', brand: 'porters r us', price: 5, abv: 7, pints: 12},
-        {name: 'Believable Stout', brand: 'guiness', price: 5, abv: 6, pints: 12},
-        {name: 'Fake Pale Ale', brand: 'pyramid', price: 4, abv: 5, pints: 12}
-      ]
+      masterList : {
+        '94cb016d-63bd-4965-8563-9591ec79ebc6': {
+          name: 'Delicious IPA',
+          brand: 'ninkasi',
+          price: 6,
+          abv: 10,
+          pints: 12
+        },
+        '4678f4ff-50bd-4f84-b68f-15c275a6f865': {
+          name: 'Amazing Lager',
+          brand: 'rolling rock',
+          price: 3,
+          abv: 8,
+          pints: 12
+        },
+        'd657380e-4401-4328-93e7-bf916f38f7df': {
+          name: 'Scrumptous Porter',
+          brand: 'porters r us',
+          price: 5,
+          abv: 7,
+          pints: 12
+        },
+        '98edaf73-11d1-4075-afd2-3486cf89b413': {
+          name: 'Believable Stout',
+          brand: 'guiness',
+          price: 5,
+          abv: 6,
+          pints: 12
+        },
+        '1319d14e-c93c-4e1f-be1e-d337891b8f09': {
+          name: 'Fake Pale Ale',
+          brand: 'pyramid',
+          price: 4,
+          abv: 5,
+          pints: 12
+        }
+      }
     };
     this.handleKegAdd = this.handleKegAdd.bind(this);
+    this.handleKegDelete = this.handleKegDelete.bind(this);
   }
 
   handleKegAdd(keg){
-    const tempList = this.state.masterList.slice();
-    tempList.push(keg);
+    const tempList = Object.assign({}, this.state.masterList,{
+      [keg.id]: keg
+    });
     this.setState({ masterList : tempList});
+  }
+
+  handleKegDelete(kegId){
+    delete this.state.masterList[kegId];
   }
 
   render(){
@@ -66,7 +101,8 @@ class App extends React.Component {
               <Route path="/admin" render={(props) =>
                 <Admin masterList={this.state.masterList}
                   currentRoute={props.location.pathname}
-                  onKegAdd={this.handleKegAdd}/>}
+                  onKegAdd={this.handleKegAdd}
+                  onKegDelete={this.handleKegDelete}/>}
               />
             </Switch>
           </div>

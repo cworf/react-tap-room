@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Modal from 'material-ui/Modal';
 import Button from 'material-ui/Button';
+import { v4 } from 'uuid';
 
 const styles = theme => ({
   paper: {
@@ -44,7 +45,7 @@ class AddKeg extends React.Component {
     const priceNum = parseInt(this._price.value);
     const abvNum = parseInt(this._abv.value);
     const pintsNum = parseInt(this._pints.value);
-    this.props.onKegAdd({ name: this._name.value, brand: this._brand.value, price: priceNum, abv: abvNum, pints: pintsNum });
+    this.props.onKegAdd({ name: this._name.value, brand: this._brand.value, price: priceNum, abv: abvNum, pints: pintsNum, id:v4() });
   }
 
   render() {

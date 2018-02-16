@@ -5,7 +5,6 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Badge from 'material-ui/Badge';
-import Grid from 'material-ui/Grid';
 
 const styles = theme => ({
   card: {
@@ -43,9 +42,14 @@ const price = {
   float: 'right'
 };
 
+
+
 function Keg(props) {
-  console.log(props);
   const { classes } = props;
+  function handleKegDeleteClick(){
+    
+  }
+
   if (props.currentRoute === '/admin') {
     return (
       <div>
@@ -68,7 +72,7 @@ function Keg(props) {
               <Button>Edit</Button>
             </Typography>
             <Typography variant="body1" align="right">
-              <Button>Delete</Button>
+              <Button onClick={handleKegDeleteClick}>Delete</Button>
             </Typography>
           </CardActions>
         </Card>
@@ -106,7 +110,9 @@ Keg.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   pints: PropTypes.number,
-  currentRoute: PropTypes.string
+  key: PropTypes.string,
+  currentRoute: PropTypes.string,
+  onKegDelete: PropTypes.func,
 };
 
 export default withStyles(styles)(Keg);

@@ -20,6 +20,7 @@
     "react-router-dom": "^4.0.0",
     "styled-jsx": "^2.2.4",
     "typeface-roboto": "0.0.54",
+    "uuid": "^3.2.1",
     "webpack-css-loaders": "^1.0.0"
   },
   "devDependencies": {
