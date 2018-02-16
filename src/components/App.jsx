@@ -34,35 +34,40 @@ class App extends React.Component {
           brand: 'ninkasi',
           price: 6,
           abv: 10,
-          pints: 12
+          pints: 12,
+          id: '94cb016d-63bd-4965-8563-9591ec79ebc6'
         },
         '4678f4ff-50bd-4f84-b68f-15c275a6f865': {
           name: 'Amazing Lager',
           brand: 'rolling rock',
           price: 3,
           abv: 8,
-          pints: 12
+          pints: 12,
+          id: '4678f4ff-50bd-4f84-b68f-15c275a6f865'
         },
         'd657380e-4401-4328-93e7-bf916f38f7df': {
           name: 'Scrumptous Porter',
           brand: 'porters r us',
           price: 5,
           abv: 7,
-          pints: 12
+          pints: 12,
+          id: 'd657380e-4401-4328-93e7-bf916f38f7df'
         },
         '98edaf73-11d1-4075-afd2-3486cf89b413': {
           name: 'Believable Stout',
           brand: 'guiness',
           price: 5,
           abv: 6,
-          pints: 12
+          pints: 12,
+          id: '98edaf73-11d1-4075-afd2-3486cf89b413'
         },
         '1319d14e-c93c-4e1f-be1e-d337891b8f09': {
           name: 'Fake Pale Ale',
           brand: 'pyramid',
           price: 4,
           abv: 5,
-          pints: 12
+          pints: 12,
+          id: '1319d14e-c93c-4e1f-be1e-d337891b8f09'
         }
       }
     };

@@ -13,6 +13,7 @@ const styles = {
 };
 
 function KegList(props) {
+  console.log(props.masterList);
   const { classes } = props;
   return (
     <div style={{maxWidth:'1300px', margin:'auto'}} className={classes.root}>
