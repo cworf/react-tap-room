@@ -37,6 +37,13 @@ class App extends React.Component {
         {name: 'Fake Pale Ale', brand: 'pyramid', price: 4, abv: 5, pints: 12}
       ]
     };
+    this.handleKegAdd = this.handleKegAdd.bind(this);
+  }
+
+  handleKegAdd(keg){
+    const tempList = this.state.masterList.slice();
+    tempList.push(keg);
+    this.setState({ masterList : tempList});
   }
 
   render(){
@@ -58,7 +65,8 @@ class App extends React.Component {
               />
               <Route path="/admin" render={(props) =>
                 <Admin masterList={this.state.masterList}
-                  currentRoute={props.location.pathname}/>} 
+                  currentRoute={props.location.pathname}
+                  onKegAdd={this.handleKegAdd}/>}
               />
             </Switch>
           </div>

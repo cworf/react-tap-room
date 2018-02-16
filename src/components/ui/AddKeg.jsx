@@ -19,11 +19,17 @@ class AddKeg extends React.Component {
 
   constructor(props){
     super(props);
+    this._name;
+    this._brand;
+    this._price;
+    this._abv;
+    this._pints;
     this.state = {
       open: false
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleNewKegSubmit = this.handleNewKegSubmit.bind(this);
   }
 
   handleOpen(){
@@ -32,6 +38,10 @@ class AddKeg extends React.Component {
 
   handleClose(){
     this.setState({ open: false });
+  }
+
+  handleNewKegSubmit(){
+    this.props.onKegAdd({name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, pints: this._pints.value});
   }
 
   render() {
@@ -49,23 +59,28 @@ class AddKeg extends React.Component {
               Add-a-keg
             </Typography>
             <Typography variant="body2" id="simple-modal-description">
-              <form>
+              <form onSubmit={this.handleNewKegSubmit}>
                 <div>
-                  <input placeholder="name" />
+                  <input placeholder="name"
+                    ref={(input) => {this._name = input;}} />
                 </div>
                 <div>
-                  <input placeholder="brand" />
+                  <input placeholder="brand"
+                    ref={(input) => {this._brand = input;}} />
                 </div>
                 <div>
-                  <input placeholder="price" />
+                  <input placeholder="price"
+                    ref={(input) => {this._price = input;}} />
                 </div>
                 <div>
-                  <input placeholder="abv" />
+                  <input placeholder="abv"
+                    ref={(input) => {this._abv = input;}} />
                 </div>
                 <div style={{marginBottom:'30px'}}>
-                  <input placeholder="pints"/>
+                  <input placeholder="pints"
+                    ref={(input) => {this._pints = input;}}/>
                 </div>
-                <Button size="small" variant="raised" color="primary" align="left">Add</Button>
+                <Button size="small" type="submit" variant="raised" color="primary" align="left">Add</Button>
               </form>
             </Typography>
           </div>
@@ -77,6 +92,7 @@ class AddKeg extends React.Component {
 
 AddKeg.propTypes = {
   classes: PropTypes.object.isRequired,
+  onKegAdd: PropTypes.func
 };
 
 export default withStyles(styles)(AddKeg);

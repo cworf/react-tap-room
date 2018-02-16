@@ -12,7 +12,7 @@ function Admin(props) {
         Hello admin, you are in charge nowwww
       </Typography>
       <Typography style={{marginTop:'30px'}} variant="body1" align="center" gutterBottom>
-        <AddKeg />
+        <AddKeg onKegAdd={props.onKegAdd} />
       </Typography>
       <KegList
         currentRoute={props.currentRoute}
@@ -24,7 +24,8 @@ function Admin(props) {
 
 Admin.propTypes = {
   currentRoute:PropTypes.string,
-  masterList: PropTypes.array.isRequired
+  masterList: PropTypes.array.isRequired,
+  onKegAdd: PropTypes.func
 };
 
 export default Admin;
