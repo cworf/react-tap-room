@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuBar from './ui/MenuBar';
-import KegList from './pages/KegList';
-import AddKeg from './pages/AddKeg';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { Switch, Route } from 'react-router-dom';
 import Reboot from 'material-ui/Reboot';
@@ -38,8 +38,8 @@ function App() {
         <div>
           <MenuBar />
           <Switch>
-            <Route exact path="/" component={KegList} />
-            <Route path="/add" component={AddKeg} />
+            <Route exact path="/" component={Home} />
+            <Route path="/admin" component={Admin} />
           </Switch>
         </div>
       </MuiThemeProvider>
