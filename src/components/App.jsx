@@ -53,7 +53,7 @@ class App extends React.Component {
           <div>
             <MenuBar />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={() => <Home masterList={this.state.masterList} />} />
               <Route path="/admin" component={Admin} />
             </Switch>
           </div>

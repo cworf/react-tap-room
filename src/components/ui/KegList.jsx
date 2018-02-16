@@ -15,10 +15,11 @@ const styles = theme => ({
 
 function KegList(props) {
   const { classes } = props;
+  console.log(props);
   return (
     <div style={{maxWidth:'1300px', margin:'auto'}} className={classes.root}>
       <Grid container spacing={24}>
-        {masterList.map( (keg, index) =>
+        {props.masterList.map( (keg, index) =>
           <Grid item xs={3} key={index}>
             <Keg name={keg.name}
               brand={keg.brand}
@@ -34,6 +35,7 @@ function KegList(props) {
 
 KegList.propTypes = {
   classes: PropTypes.object.isRequired,
+  masterList: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(KegList);
