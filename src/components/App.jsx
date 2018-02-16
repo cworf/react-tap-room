@@ -83,7 +83,9 @@ class App extends React.Component {
   }
 
   handleKegDelete(kegId){
-    delete this.state.masterList[kegId];
+    const tempList = Object.assign({}, this.state.masterList);
+    delete tempList[kegId];
+    this.setState({masterList:tempList});
   }
 
   render(){

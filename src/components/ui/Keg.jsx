@@ -47,7 +47,7 @@ const price = {
 function Keg(props) {
   const { classes } = props;
   function handleKegDeleteClick(){
-    
+    props.onKegDelete(props.id);
   }
 
   if (props.currentRoute === '/admin') {
@@ -110,7 +110,7 @@ Keg.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   pints: PropTypes.number,
-  key: PropTypes.string,
+  id: PropTypes.string,
   currentRoute: PropTypes.string,
   onKegDelete: PropTypes.func,
 };
