@@ -73,6 +73,7 @@ class App extends React.Component {
     };
     this.handleKegAdd = this.handleKegAdd.bind(this);
     this.handleKegDelete = this.handleKegDelete.bind(this);
+    this.handleSellPint = this.handleSellPint.bind(this);
   }
 
   handleKegAdd(keg){
@@ -85,6 +86,12 @@ class App extends React.Component {
   handleKegDelete(kegId){
     const tempList = Object.assign({}, this.state.masterList);
     delete tempList[kegId];
+    this.setState({masterList:tempList});
+  }
+
+  handleSellPint(kegId){
+    const tempList = Object.assign({}, this.state.masterList);
+    tempList[kegId].pints --;
     this.setState({masterList:tempList});
   }
 
@@ -103,7 +110,8 @@ class App extends React.Component {
             <MenuBar />
             <Switch>
               <Route exact path="/" render={() =>
-                <Home masterList={this.state.masterList} />}
+                <Home masterList={this.state.masterList}
+                  onSellPint={this.handleSellPint} />}
               />
               <Route path="/admin" render={(props) =>
                 <Admin masterList={this.state.masterList}

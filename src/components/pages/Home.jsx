@@ -10,13 +10,15 @@ function Home(props) {
       <Typography style={{marginTop:'30px'}} variant="display1" align="center" gutterBottom>
         Welcome! Check out our beers nowww
       </Typography>
-      <KegList masterList={props.masterList}/>
+      <KegList masterList={props.masterList}
+        onSellPint={props.onSellPint}/>
     </div>
   );
 }
 
 Home.propTypes = {
-  masterList: PropTypes.object.isRequired
+  masterList: PropTypes.object.isRequired,
+  onSellPint: PropTypes.func
 };
 
 export default Home;

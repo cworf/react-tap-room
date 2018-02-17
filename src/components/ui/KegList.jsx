@@ -28,7 +28,8 @@ function KegList(props) {
               pints={keg.pints}
               id={keg.id}
               currentRoute={props.currentRoute}
-              onKegDelete={props.onKegDelete}/>
+              onKegDelete={props.onKegDelete}
+              onSellPint={props.onSellPint}/>
           </Grid>;
         })}
       </Grid>
@@ -41,6 +42,7 @@ KegList.propTypes = {
   masterList: PropTypes.object.isRequired,
   currentRoute: PropTypes.string,
   onKegDelete: PropTypes.func,
+  onSellPint: PropTypes.func
 };
 
 export default withStyles(styles)(KegList);

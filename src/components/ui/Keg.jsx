@@ -46,8 +46,13 @@ const price = {
 
 function Keg(props) {
   const { classes } = props;
+
   function handleKegDeleteClick(){
     props.onKegDelete(props.id);
+  }
+
+  function handleSellPintClick(){
+    props.onSellPint(props.id);
   }
 
   if (props.currentRoute === '/admin') {
@@ -94,7 +99,7 @@ function Keg(props) {
           </CardContent>
           <CardActions style={flexBtns}>
             <Badge className={classes.margin} badgeContent={props.pints} color="secondary">
-              <Button size="small" variant="raised" color="primary">Sell Pint</Button>
+              <Button size="small" variant="raised" color="primary" onClick={handleSellPintClick}>Sell Pint</Button>
             </Badge>
           </CardActions>
         </Card>
@@ -113,6 +118,7 @@ Keg.propTypes = {
   id: PropTypes.string,
   currentRoute: PropTypes.string,
   onKegDelete: PropTypes.func,
+  onSellPint: PropTypes.func
 };
 
 export default withStyles(styles)(Keg);
