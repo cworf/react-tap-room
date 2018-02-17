@@ -13,7 +13,6 @@ const styles = {
 };
 
 function KegList(props) {
-  console.log(props.masterList);
   const { classes } = props;
   return (
     <div style={{maxWidth:'1300px', margin:'auto'}} className={classes.root}>
@@ -29,6 +28,7 @@ function KegList(props) {
               id={keg.id}
               currentRoute={props.currentRoute}
               onKegDelete={props.onKegDelete}
+              onKegEdit={props.onKegEdit}
               onSellPint={props.onSellPint}/>
           </Grid>;
         })}
@@ -42,7 +42,8 @@ KegList.propTypes = {
   masterList: PropTypes.object.isRequired,
   currentRoute: PropTypes.string,
   onKegDelete: PropTypes.func,
-  onSellPint: PropTypes.func
+  onSellPint: PropTypes.func,
+  onKegEdit: PropTypes.func
 };
 
 export default withStyles(styles)(KegList);

@@ -117,6 +117,7 @@ class App extends React.Component {
                 <Admin masterList={this.state.masterList}
                   currentRoute={props.location.pathname}
                   onKegAdd={this.handleKegAdd}
+                  onKegEdit={this.handleKegAdd}
                   onKegDelete={this.handleKegDelete}/>}
               />
             </Switch>

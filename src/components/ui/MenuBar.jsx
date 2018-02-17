@@ -7,7 +7,6 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Button from 'material-ui/Button';
-import Icon from 'material-ui/Icon';
 import {Link} from 'react-router-dom';
 
 
@@ -26,7 +25,6 @@ const styles = {
 
 
 function MenuBar(props) {
-  console.log(props);
   const { classes } = props;
   return (
     <div className={classes.root}>

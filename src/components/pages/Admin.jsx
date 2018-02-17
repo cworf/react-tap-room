@@ -18,6 +18,7 @@ function Admin(props) {
         currentRoute={props.currentRoute}
         masterList={props.masterList}
         onKegDelete={props.onKegDelete}
+        onKegEdit={props.onKegEdit}
       />
     </div>
   );
@@ -28,6 +29,7 @@ Admin.propTypes = {
   masterList: PropTypes.object.isRequired,
   onKegAdd: PropTypes.func,
   onKegDelete: PropTypes.func,
+  onKegEdit: PropTypes.func
 };
 
 export default Admin;

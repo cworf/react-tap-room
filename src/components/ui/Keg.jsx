@@ -5,6 +5,7 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Badge from 'material-ui/Badge';
+import EditKeg from './EditKeg';
 
 const styles = theme => ({
   card: {
@@ -74,7 +75,13 @@ function Keg(props) {
               <Button size="small" variant="raised" color="primary">Refill</Button>
             </Badge>
             <Typography variant="body1" align="right">
-              <Button>Edit</Button>
+              <EditKeg   name={props.name}
+                brand={props.brand}
+                price={props.price}
+                abv={props.abv}
+                pints={props.pints}
+                id={props.id}
+                onKegEdit={props.onKegEdit} />
             </Typography>
             <Typography variant="body1" align="right">
               <Button onClick={handleKegDeleteClick}>Delete</Button>
@@ -118,7 +125,8 @@ Keg.propTypes = {
   id: PropTypes.string,
   currentRoute: PropTypes.string,
   onKegDelete: PropTypes.func,
-  onSellPint: PropTypes.func
+  onSellPint: PropTypes.func,
+  onKegEdit: PropTypes.func
 };
 
 export default withStyles(styles)(Keg);
